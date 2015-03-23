@@ -10,6 +10,9 @@
 		281FFDA5CB89424ABCD9EE37 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F17B699B57471BBFAE4207 /* main.m */; };
 		323FF4BE34C9F04EB112F90B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4582F8580AD8AAC13746C15 /* libPods.a */; };
 		3E2E3C0B0A9049909C217755 /* FISAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CEF5F56BD54A13B7ECE704 /* FISAppDelegate.m */; };
+		A06FA3DE1AC04A7600E2A02C /* FISDay.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FA3DD1AC04A7600E2A02C /* FISDay.m */; };
+		A06FA3E11AC04B8D00E2A02C /* FISDayDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = A06FA3E01AC04B8D00E2A02C /* FISDayDisplay.m */; };
+		A06FA3E31AC04C4000E2A02C /* FISDayDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A06FA3E21AC04C4000E2A02C /* FISDayDisplay.xib */; };
 		AC54A0AD64CD951218E95307 /* libPods-unit_tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5DFA5E3767BFDDAB27D700 /* libPods-unit_tests.a */; };
 		AF2F896A020C405DB0266B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E464B0A5CDB40B3B4639FB0 /* Images.xcassets */; };
 		D8C986B71A1CED800093C217 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8C986B61A1CED800093C217 /* Main.storyboard */; };
@@ -40,6 +43,11 @@
 		631C576CA66C4475BCCEE050 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8181CF74841D4451BEEFEFD8 /* pour-cast-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "pour-cast-Info.plist"; sourceTree = "<group>"; };
 		8230D2B818F29F32B89DDF02 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A06FA3DC1AC04A7600E2A02C /* FISDay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISDay.h; sourceTree = "<group>"; };
+		A06FA3DD1AC04A7600E2A02C /* FISDay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISDay.m; sourceTree = "<group>"; };
+		A06FA3DF1AC04B8D00E2A02C /* FISDayDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FISDayDisplay.h; sourceTree = "<group>"; };
+		A06FA3E01AC04B8D00E2A02C /* FISDayDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FISDayDisplay.m; sourceTree = "<group>"; };
+		A06FA3E21AC04C4000E2A02C /* FISDayDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FISDayDisplay.xib; sourceTree = "<group>"; };
 		A8F17B699B57471BBFAE4207 /* main.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B18E84164FF1D1A7B7C7BF94 /* Pods-unit_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-unit_tests/Pods-unit_tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B390047BAEC1439AAFDE28AF /* FISAppDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FISAppDelegate.h; sourceTree = "<group>"; };
@@ -177,13 +185,18 @@
 		FD076FDA681E45DC953CA937 /* pour-cast */ = {
 			isa = PBXGroup;
 			children = (
+				A06FA3DC1AC04A7600E2A02C /* FISDay.h */,
+				A06FA3DD1AC04A7600E2A02C /* FISDay.m */,
+				A06FA3DF1AC04B8D00E2A02C /* FISDayDisplay.h */,
+				A06FA3E01AC04B8D00E2A02C /* FISDayDisplay.m */,
+				A06FA3E21AC04C4000E2A02C /* FISDayDisplay.xib */,
 				D8C986F21A1E48E10093C217 /* ForcastAPIClient.h */,
 				D8C986F31A1E48E10093C217 /* ForcastAPIClient.m */,
-				D8C986B61A1CED800093C217 /* Main.storyboard */,
 				D8C986BD1A1CFB000093C217 /* FISViewController.h */,
 				D8C986BE1A1CFB000093C217 /* FISViewController.m */,
 				B390047BAEC1439AAFDE28AF /* FISAppDelegate.h */,
 				D7CEF5F56BD54A13B7ECE704 /* FISAppDelegate.m */,
+				D8C986B61A1CED800093C217 /* Main.storyboard */,
 				515F21C34F194FB8A01DB0B2 /* Resources */,
 			);
 			path = "pour-cast";
@@ -274,6 +287,7 @@
 			files = (
 				AF2F896A020C405DB0266B43 /* Images.xcassets in Resources */,
 				D8C986B71A1CED800093C217 /* Main.storyboard in Resources */,
+				A06FA3E31AC04C4000E2A02C /* FISDayDisplay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,8 +376,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8C986F41A1E48E10093C217 /* ForcastAPIClient.m in Sources */,
+				A06FA3DE1AC04A7600E2A02C /* FISDay.m in Sources */,
 				3E2E3C0B0A9049909C217755 /* FISAppDelegate.m in Sources */,
 				281FFDA5CB89424ABCD9EE37 /* main.m in Sources */,
+				A06FA3E11AC04B8D00E2A02C /* FISDayDisplay.m in Sources */,
 				D8C986BF1A1CFB000093C217 /* FISViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

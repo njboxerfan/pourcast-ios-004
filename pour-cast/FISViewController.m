@@ -8,23 +8,15 @@
 
 #import "FISViewController.h"
 #import "ForcastAPIClient.h"
+#import "FISDayDisplay.h"
 
 @interface FISViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *dayOneName;
-@property (weak, nonatomic) IBOutlet UILabel *dayOneHighTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayOneLowTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayTwoName;
-@property (weak, nonatomic) IBOutlet UILabel *dayTwoHighTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayTwoLowTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayThreeName;
-@property (weak, nonatomic) IBOutlet UILabel *dayThreeHighTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayThreeLowTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayFourName;
-@property (weak, nonatomic) IBOutlet UILabel *dayFourHighTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayFourLowTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayFiveName;
-@property (weak, nonatomic) IBOutlet UILabel *dayFiveHighTemp;
-@property (weak, nonatomic) IBOutlet UILabel *dayFiveLowTemp;
+
+@property (weak, nonatomic) IBOutlet FISDayDisplay *dayOne;
+@property (weak, nonatomic) IBOutlet FISDayDisplay *dayTwo;
+@property (weak, nonatomic) IBOutlet FISDayDisplay *dayThree;
+@property (weak, nonatomic) IBOutlet FISDayDisplay *dayFour;
+@property (weak, nonatomic) IBOutlet FISDayDisplay *dayFive;
 
 @end
 
@@ -45,9 +37,14 @@
         NSString *maxTemp = [NSString stringWithFormat:@"High: %@F",dayOne[@"temperatureMax"]];
         NSString *minTemp = [NSString stringWithFormat:@"Low: %@F",dayOne[@"temperatureMin"]];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.dayOneHighTemp.text = maxTemp;
-            self.dayOneLowTemp.text = minTemp;
-            self.dayOneName.text = [format stringFromDate:dateTime];
+            
+            FISDay *dayUno = [[FISDay alloc] init];
+            dayUno.dayOfWeek = [format stringFromDate:dateTime];
+            dayUno.loTemp = minTemp;
+            dayUno.hiTemp = maxTemp;
+            
+            self.dayOne.day = dayUno;
+            
         }];
 
         NSDictionary *day = dailyForecast[2];
@@ -56,9 +53,14 @@
         maxTemp = [NSString stringWithFormat:@"High: %@F",day[@"temperatureMax"]];
         minTemp = [NSString stringWithFormat:@"Low: %@F",day[@"temperatureMin"]];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.dayTwoHighTemp.text = maxTemp;
-            self.dayTwoLowTemp.text = minTemp;
-            self.dayTwoName.text = [format stringFromDate:dateTime];
+            
+            FISDay *dayDos = [[FISDay alloc] init];
+            dayDos.dayOfWeek = [format stringFromDate:dateTime];
+            dayDos.loTemp = minTemp;
+            dayDos.hiTemp = maxTemp;
+            
+            self.dayTwo.day = dayDos;
+            
         }];
         day = dailyForecast[3];
         time = [day[@"time"] integerValue];
@@ -66,9 +68,14 @@
         maxTemp = [NSString stringWithFormat:@"High: %@F",day[@"temperatureMax"]];
         minTemp = [NSString stringWithFormat:@"Low: %@F",day[@"temperatureMin"]];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.dayThreeHighTemp.text = maxTemp;
-            self.dayThreeLowTemp.text = minTemp;
-            self.dayThreeName.text = [format stringFromDate:dateTime];
+            
+            FISDay *dayTres = [[FISDay alloc] init];
+            dayTres.dayOfWeek = [format stringFromDate:dateTime];
+            dayTres.loTemp = minTemp;
+            dayTres.hiTemp = maxTemp;
+            
+            self.dayThree.day = dayTres;
+            
         }];
         day = dailyForecast[4];
         time = [day[@"time"] integerValue];
@@ -76,9 +83,14 @@
         maxTemp = [NSString stringWithFormat:@"High: %@F",day[@"temperatureMax"]];
         minTemp = [NSString stringWithFormat:@"Low: %@F",day[@"temperatureMin"]];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.dayFourHighTemp.text = maxTemp;
-            self.dayFourLowTemp.text = minTemp;
-            self.dayFourName.text = [format stringFromDate:dateTime];
+            
+            FISDay *dayQuatro = [[FISDay alloc] init];
+            dayQuatro.dayOfWeek = [format stringFromDate:dateTime];
+            dayQuatro.loTemp = minTemp;
+            dayQuatro.hiTemp = maxTemp;
+            
+            self.dayFour.day = dayQuatro;
+            
         }];
         day = dailyForecast[5];
         time = [day[@"time"] integerValue];
@@ -86,9 +98,14 @@
         maxTemp = [NSString stringWithFormat:@"High: %@F",day[@"temperatureMax"]];
         minTemp = [NSString stringWithFormat:@"Low: %@F",day[@"temperatureMin"]];
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            self.dayFiveHighTemp.text = maxTemp;
-            self.dayFiveLowTemp.text = minTemp;
-            self.dayFiveName.text = [format stringFromDate:dateTime];
+            
+            FISDay *dayCinco = [[FISDay alloc] init];
+            dayCinco.dayOfWeek = [format stringFromDate:dateTime];
+            dayCinco.loTemp = minTemp;
+            dayCinco.hiTemp = maxTemp;
+            
+            self.dayFive.day = dayCinco;
+            
         }];
     }];
     
